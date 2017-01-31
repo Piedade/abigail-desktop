@@ -1,5 +1,5 @@
 dist/
 node_modules/
 npm-debug.log
-app/out
+out/
 _gsdata_/
