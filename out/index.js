@@ -13,7 +13,7 @@ if (electron_1.app.makeSingleInstance((commandLine, workingDirectory) => {
     electron_1.app.quit();
 }
 else {
-    require("electron-debug")();
+    require("electron-debug")({ showDevTools: true });
     electron_1.app.on("ready", () => {
         electron_1.ipcMain.on("log.error", (event, arg) => {
             util_1.log(arg);

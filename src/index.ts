@@ -14,7 +14,7 @@ if (app.makeSingleInstance((commandLine: any[], workingDirectory: string) => {
   app.quit()
 }
 else {
-  require("electron-debug")()
+  require("electron-debug")({showDevTools: true})
 
   app.on("ready", () => {
     ipcMain.on("log.error", (event: any, arg: any) => {
