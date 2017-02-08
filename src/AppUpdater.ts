@@ -1,11 +1,10 @@
-import {BrowserWindow as BrowserWindowElectron} from "electron";
-import * as os from "os";
-import {isDev} from "./util";
-import {autoUpdater} from "electron-updater";
-import BrowserWindow = Electron.BrowserWindow
+import { BrowserWindow as BrowserWindowElectron } from "electron"
+import { autoUpdater } from "electron-updater"
+import * as os from "os"
+import { isDev } from "./util"
 
 export default class AppUpdater {
-  constructor(window: BrowserWindow) {
+  constructor() {
     if (isDev()) {
       return
     }
@@ -15,14 +14,12 @@ export default class AppUpdater {
       return
     }
 
-    if (platform === "darwin") {
-      const log = require("electron-log")
-      log.transports.file.level = "info"
-      autoUpdater.logger = log
-    }
+    const log = require("electron-log")
+    log.transports.file.level = "info"
+    autoUpdater.logger = log
 
     autoUpdater.signals.updateDownloaded(it => {
-      notify("Está disponível uma nova actualização.", `A versão ${it.version} foi transferida e vai ser automaticamente instalada quando ao Sair`)
+      notify("A new update is ready to install", `Version ${it.version} is downloaded and will be automatically installed on Quit`)
     })
     autoUpdater.checkForUpdates()
   }

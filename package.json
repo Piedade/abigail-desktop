@@ -1,5 +1,5 @@
 {
-  "name": "abigail-desktop",
+  "name": "Worldfatima",
   "version": "0.0.12",
   "license": "MIT",
   "description": "Abigail desktop app",
@@ -7,12 +7,11 @@
   "main": "./out/index.js",
   "scripts": {
     "postinstall": "install-app-deps",
-    "start": "npm install && npm run compile && electron ./out",
-    "compile": "rimraf app/out && tsc",
-    "pack": "npm run compile && build --dir",
-    "dist": "npm run compile && build --win --ia32",
-    "release": "npm run compile && build",
-    "vscode-build": "npm start"
+    "start": "yarn install && yarn compile && electron ./out",
+    "compile": "rimraf out && tsc",
+    "pack": "yarn compile && build --dir",
+    "dist": "yarn compile && build",
+    "release": "yarn compile && build"
   },
   "build": {
     "appId": "org.develar.onshape",
@@ -47,14 +46,14 @@
     "electron-debug": "^1.1.0",
     "electron-is-dev": "^0.1.2",
     "electron-log": "^1.3.0",
-    "electron-updater": "1.1.1",
+    "electron-updater": "^1.5.0",
     "keytar": "^3.0.2",
     "nslog": "^3.0.0"
   },
   "devDependencies": {
     "@types/debug": "0.0.29",
     "@types/electron": "^1.4.31",
-    "electron": "1.4.15",
+    "electron": "1.6.0",
     "electron-builder": "^12.0.3",
     "rimraf": "^2.5.4",
     "typescript": "^2.1.5"
