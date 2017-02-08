@@ -1,5 +1,5 @@
 import {app, ipcMain} from "electron";
-import setMenu from "./AppMenuManager";
+// import setMenu from "./AppMenuManager";
 import {log} from "./util";
 import WindowManager from "./WindowManager";
 
@@ -14,14 +14,14 @@ if (app.makeSingleInstance((commandLine: any[], workingDirectory: string) => {
   app.quit()
 }
 else {
-  require("electron-debug")({enabled: true, showDevTools: true})
+  require("electron-debug")()
 
   app.on("ready", () => {
     ipcMain.on("log.error", (event: any, arg: any) => {
       log(arg)
     })
 
-    setMenu("https://cad.onshape.com/documents")
+    // setMenu("http://abigail.imaginedesign.pt")
     windowManager = new WindowManager()
     windowManager.openWindows()
   })

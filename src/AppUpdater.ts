@@ -22,7 +22,7 @@ export default class AppUpdater {
     }
 
     autoUpdater.signals.updateDownloaded(it => {
-      notify("A new update is ready to install", `Version ${it.version} is downloaded and will be automatically installed on Quit`)
+      notify("Está disponível uma nova actualização.", `A versão ${it.version} foi transferida e vai ser automaticamente instalada quando ao Sair`)
     })
     autoUpdater.checkForUpdates()
   }

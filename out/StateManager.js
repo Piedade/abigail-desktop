@@ -3,7 +3,7 @@ const os = require("os");
 const path = require("path");
 const ConfigStore = require("configstore");
 const util_1 = require("./util");
-exports.DEFAULT_URL = "https://cad.onshape.com/";
+exports.DEFAULT_URL = "http://admin.worldfatima.com/";
 function defaultWindows() {
     return [
         { url: exports.DEFAULT_URL }
@@ -13,7 +13,7 @@ class StateManager {
     constructor() {
         this.store = new ConfigStore("onshape-unofficial", { windows: defaultWindows() });
         if (os.platform() == "darwin") {
-            this.store.path = path.join(os.homedir(), "Library", "Preferences", "org.develar.onshape" + (util_1.isDev() ? "-dev" : "") + ".json");
+            this.store.path = path.join(os.homedir(), "Library", "Preferences", "com.imagine.abigail" + (util_1.isDev() ? "-dev" : "") + ".json");
         }
     }
     restoreWindows() {

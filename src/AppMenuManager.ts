@@ -1,4 +1,5 @@
-import {app, Menu, shell, BrowserWindow, ipcMain} from "electron";
+/*import {app, Menu, shell, BrowserWindow, ipcMain} from "electron";*/
+import {app, Menu, BrowserWindow, ipcMain} from "electron";
 import {WINDOW_NAVIGATED} from "./WindowManager";
 import {AppSignal} from "./electronEventSignals";
 import MenuItemOptions = Electron.MenuItemOptions
@@ -116,7 +117,7 @@ export default function setMenu(homeUrl: string) {
       ]
     },
     windowsMenu,
-    {
+    /*{
       label: 'Help',
       role: 'help',
       submenu: [
@@ -144,7 +145,7 @@ export default function setMenu(homeUrl: string) {
           click: openExternalHandler('http://status.onshape.com/')
         },
       ]
-    },
+    },*/
   ]
 
   if (process.platform === 'darwin') {
@@ -228,9 +229,9 @@ function updateHistoryMenuItems(items: MenuItemOptions[], homeUrl: string) {
     })
 }
 
-function openExternalHandler(url: string) {
+/*function openExternalHandler(url: string) {
   return shell.openExternal.bind(shell, url)
-}
+}*/
 
 function getFocusedWebContents(): WebContents {
   const focusedWindow = BrowserWindow.getFocusedWindow()

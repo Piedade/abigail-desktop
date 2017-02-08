@@ -5,7 +5,7 @@ import * as path from "path"
 import ConfigStore = require("configstore")
 import { isDev } from "./util"
 
-export const DEFAULT_URL = "https://cad.onshape.com/"
+export const DEFAULT_URL = "http://admin.worldfatima.com/"
 
 function defaultWindows() {
   return [
@@ -20,7 +20,7 @@ export class StateManager {
 
   constructor() {
     if (os.platform() == "darwin") {
-      this.store.path = path.join(os.homedir(), "Library", "Preferences", "org.develar.onshape" + (isDev() ? "-dev" : "") + ".json")
+      this.store.path = path.join(os.homedir(), "Library", "Preferences", "com.imagine.abigail" + (isDev() ? "-dev" : "") + ".json")
     }
   }
 

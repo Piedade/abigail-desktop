@@ -113,35 +113,6 @@ function setMenu(homeUrl) {
             ]
         },
         windowsMenu,
-        {
-            label: 'Help',
-            role: 'help',
-            submenu: [
-                {
-                    label: name + ' Help',
-                    click: openExternalHandler('https://cad.onshape.com/help/')
-                },
-                {
-                    label: name + ' Support',
-                    click: openExternalHandler('https://www.onshape.com/support/')
-                },
-                {
-                    label: name + ' Forums',
-                    click: openExternalHandler('https://forum.onshape.com/')
-                },
-                {
-                    label: name + ' Blog',
-                    click: openExternalHandler('https://www.onshape.com/cad-blog/')
-                },
-                {
-                    type: 'separator'
-                },
-                {
-                    label: name + ' Status',
-                    click: openExternalHandler('http://status.onshape.com/')
-                },
-            ]
-        },
     ];
     if (process.platform === 'darwin') {
         template.unshift({
@@ -217,9 +188,6 @@ function updateHistoryMenuItems(items, homeUrl) {
         .windowFocused((event, window) => {
         updateEnabled(window.webContents);
     });
-}
-function openExternalHandler(url) {
-    return electron_1.shell.openExternal.bind(electron_1.shell, url);
 }
 function getFocusedWebContents() {
     const focusedWindow = electron_1.BrowserWindow.getFocusedWindow();
