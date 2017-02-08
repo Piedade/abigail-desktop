@@ -1,5 +1,5 @@
 {
-  "name": "Apostolado Mundial de Fatima",
+  "name": "abigail-desktop",
   "version": "0.0.15",
   "license": "MIT",
   "description": "Apostolado Mundial de Fátima Desktop App",
@@ -15,7 +15,7 @@
   },
   "build": {
     "appId": "com.imagine.worldfatima",
-    "category": "public.app-category.business",
+    "productName": "Apostolado Mundial de Fátima",
     "files": [
       "out",
       "node_modules"
