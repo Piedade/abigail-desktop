@@ -1,8 +1,8 @@
 {
-  "name": "Worldfatima",
+  "name": "Apostolado Mundial de Fátima",
   "version": "0.0.13",
   "license": "MIT",
-  "description": "Abigail desktop app",
+  "description": "Apostolado Mundial de Fátima Desktop App",
   "author": "Pedro Piedade <pedro@imaginedeisgn.pt>",
   "main": "./out/index.js",
   "scripts": {
@@ -14,8 +14,8 @@
     "release": "yarn compile && build"
   },
   "build": {
-    "appId": "org.develar.onshape",
-    "category": "public.app-category.graphics-design",
+    "appId": "com.imagine.worldfatima",
+    "category": "public.app-category.business",
     "files": [
       "out",
       "node_modules"
